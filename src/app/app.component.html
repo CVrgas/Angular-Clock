@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="frame">
+        <div class="time-area">
+            <div [style.display]="Clock ? 'block' : 'none'">
+                <h1 style="font-size: 75px;">{{time | date: 'h:mm:ss'}}</h1>
+                <h1  style="font-size: 25px;">{{time | date: 'EE, d MMM y'}}</h1>
+            </div>
+            <div [style.display]="StopWatch ? 'block' : 'none'">
+                <h1 style="font-size: 60px;">{{Sminutes}} min. {{Sseconds}} sec.</h1>
+                <button class="btn btn-primary"  (click)="startWatch()" style="margin-right: 10px;">Start</button>
+                <button class="btn btn-danger" (click)="resetWatch()" style="margin-left: 10px;">Stop</button>
+            </div>
+            <div [style.display]="Timer ? 'block' : 'none'">
+                <div>
+                    <label style="font-size: 75px;">00:{{minutes || '00'}}:{{seconds || '00'}}</label>
+                </div>
+                <input (change)="LiveUpdate()" type="range" class="form-range" min="0" max="59" step="1" [(ngModel)]="InputValue" >
+                <div>
+                    <button class="btn btn-outline-dark" (click)="setTimer()" style="margin-right: 10px;">Start</button>
+                    <button class="btn btn-outline-danger" (click)="stopClock()" style="margin-left: 10px;">Stop</button>
+                </div>   
+            </div>
+        </div>
+        <div class="buttons-area">
+            <div class="row">
+                <button class="btn btn-outline-dark col" (click)="toClock()">Clock</button>
+                <button style="margin-left: 10px; margin-right: 10px;" class="btn btn-outline-dark col" (click)="toStopWatch()">Stopwatch</button>
+                <button class="btn btn-outline-dark col" (click)="toTimer()">Timer</button>
+            </div>
+        </div>
+    </div>
+</div>

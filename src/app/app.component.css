@@ -1,0 +1,25 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+
+}
+.frame{
+    border-radius: 50px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  10px 10px 8px #bebebe, -10px -10px 8px #ffffff;
+    padding: 10px;
+    max-width: 500px;
+    max-height: 270px;
+}
+.time-area{
+    min-height: 160px;
+    padding: 10px;
+    color: black;
+    text-align: center;
+    border-bottom: 2px solid;
+}
+.buttons-area{
+    padding: 10px;
+    max-width: 350px;
+    margin: auto;
+}
